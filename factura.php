@@ -7,6 +7,9 @@ $clientes = $db->query('SELECT * FROM clientes');
 <head>
     <meta charset="UTF-8">
     <title>Nueva factura</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
     <script>
     function calcularTotal() {
         let total = 0;
@@ -19,31 +22,35 @@ $clientes = $db->query('SELECT * FROM clientes');
     }
     </script>
 </head>
-<body>
-    <h1>Crear factura</h1>
-    <form method="post" action="guardar_factura.php" oninput="calcularTotal()">
-        <label>Cliente:
-            <select name="cliente_id" required>
-                <option value="">Seleccione...</option>
-                <?php while ($c = $clientes->fetchArray()) : ?>
-                    <option value="<?=$c['id']?>"><?=$c['nombre']?></option>
-                <?php endwhile; ?>
-            </select>
-        </label>
-        <h2>Productos</h2>
-        <table border="1">
+
+<body class="container py-4">
+    <h1 class="mb-4">Crear factura</h1>
+    <form method="post" action="guardar_factura.php" oninput="calcularTotal()" class="mb-4">
+        <div class="mb-3">
+            <label class="form-label">Cliente
+                <select name="cliente_id" class="form-select" required>
+                    <option value="">Seleccione...</option>
+                    <?php while ($c = $clientes->fetchArray()) : ?>
+                        <option value="<?=$c['id']?>"><?=$c['nombre']?></option>
+                    <?php endwhile; ?>
+                </select>
+            </label>
+        </div>
+        <h2 class="h4">Productos</h2>
+        <table class="table table-bordered">
             <tr><th>Producto</th><th>Cantidad</th><th>Precio</th></tr>
             <?php for ($i=1;$i<=5;$i++): ?>
             <tr>
-                <td><input type="text" name="producto[]"></td>
-                <td><input type="number" step="any" name="cantidad[]" id="cantidad<?=$i?>"></td>
-                <td><input type="number" step="any" name="precio[]" id="precio<?=$i?>"></td>
+                <td><input type="text" name="producto[]" class="form-control"></td>
+                <td><input type="number" step="any" name="cantidad[]" id="cantidad<?=$i?>" class="form-control"></td>
+                <td><input type="number" step="any" name="precio[]" id="precio<?=$i?>" class="form-control"></td>
             </tr>
             <?php endfor; ?>
         </table>
-        <p>Total: <span id="total">0.00</span></p>
-        <button type="submit">Guardar factura</button>
+        <p class="fw-bold">Total: <span id="total">0.00</span></p>
+        <button type="submit" class="btn btn-primary">Guardar factura</button>
     </form>
-    <p><a href="index.php">Volver al inicio</a></p>
+    <a class="btn btn-secondary" href="index.php">Volver al inicio</a>
+
 </body>
 </html>

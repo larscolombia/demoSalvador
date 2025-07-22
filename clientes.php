@@ -17,22 +17,41 @@ $clientes = $db->query('SELECT * FROM clientes');
 <head>
     <meta charset="UTF-8">
     <title>Clientes</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
-<body>
-    <h1>Registrar cliente</h1>
-    <form method="post">
-        <label>Nombre: <input type="text" name="nombre" required></label><br>
-        <label>NIT: <input type="text" name="nit" required></label><br>
-        <label>Teléfono: <input type="text" name="telefono"></label><br>
-        <label>Correo: <input type="email" name="correo"></label><br>
-        <button type="submit">Guardar</button>
+<body class="container py-4">
+    <h1 class="mb-4">Registrar cliente</h1>
+    <form method="post" class="mb-4">
+        <div class="mb-3">
+            <label class="form-label">Nombre
+                <input type="text" name="nombre" class="form-control" required>
+            </label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">NIT
+                <input type="text" name="nit" class="form-control" required>
+            </label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Teléfono
+                <input type="text" name="telefono" class="form-control">
+            </label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Correo
+                <input type="email" name="correo" class="form-control">
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
-    <h2>Clientes registrados</h2>
-    <ul>
+    <h2 class="mb-3">Clientes registrados</h2>
+    <ul class="list-group mb-3">
     <?php while ($c = $clientes->fetchArray()) : ?>
-        <li><?="{$c['nombre']} - {$c['nit']}"?></li>
+        <li class="list-group-item"><?="{$c['nombre']} - {$c['nit']}"?></li>
     <?php endwhile; ?>
     </ul>
-    <p><a href="index.php">Volver al inicio</a></p>
+    <a class="btn btn-secondary" href="index.php">Volver al inicio</a>
+
 </body>
 </html>
