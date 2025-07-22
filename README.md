@@ -1,13 +1,14 @@
 # DemoSalvador
 
-Este es el repositorio inicializado para el proyecto DemoSalvador.
+Este proyecto contiene un sistema de facturación sencillo realizado en PHP sin frameworks. Las páginas usan Bootstrap desde CDN para verse bien en equipos de escritorio y móviles.
 
-## Estructura
+## Uso rápido
 
-- Documentación y archivos fuente se agregarán próximamente.
+1. Asegúrese de tener PHP con la extensión SQLite habilitada.
+2. Sitúese en la carpeta del proyecto y ejecute:
+   ```bash
+   php -S localhost:8000
+   ```
+3. Abra en su navegador `http://localhost:8000/index.php`.
 
-## Cómo empezar
-
-1. Clona este repositorio.
-2. Instala las dependencias necesarias.
-3. ¡Comienza a desarrollar! 
+Desde la página principal podrá registrar clientes, crear facturas, verlas y exportarlas en PDF.
