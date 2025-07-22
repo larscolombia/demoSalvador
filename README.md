@@ -1,6 +1,8 @@
 # DemoSalvador
 
+
 Este proyecto contiene un sistema de facturación sencillo realizado en PHP sin frameworks. Las páginas usan Bootstrap desde CDN para verse bien en equipos de escritorio y móviles.
+
 
 ## Uso rápido
 
