@@ -7,7 +7,9 @@ $clientes = $db->query('SELECT * FROM clientes');
 <head>
     <meta charset="UTF-8">
     <title>Nueva factura</title>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
     <script>
     function calcularTotal() {
         let total = 0;
@@ -20,6 +22,7 @@ $clientes = $db->query('SELECT * FROM clientes');
     }
     </script>
 </head>
+
 <body class="container py-4">
     <h1 class="mb-4">Crear factura</h1>
     <form method="post" action="guardar_factura.php" oninput="calcularTotal()" class="mb-4">
@@ -48,5 +51,6 @@ $clientes = $db->query('SELECT * FROM clientes');
         <button type="submit" class="btn btn-primary">Guardar factura</button>
     </form>
     <a class="btn btn-secondary" href="index.php">Volver al inicio</a>
+
 </body>
 </html>

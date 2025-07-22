@@ -6,6 +6,7 @@ $stmt->bindValue(':id', $id);
 $factura = $stmt->execute()->fetchArray(SQLITE3_ASSOC);
 if (!$factura) { exit('Factura no encontrada'); }
 
+
 $itemsQuery = $db->query("SELECT producto, cantidad, precio FROM factura_items WHERE factura_id = $id");
 $items = [];
 while ($row = $itemsQuery->fetchArray(SQLITE3_ASSOC)) {
@@ -68,3 +69,4 @@ header('Content-Type: application/pdf');
 header('Content-Disposition: attachment; filename="factura_' . $id . '.pdf"');
 
 echo generar_pdf($factura, $items);
+
