@@ -23,7 +23,10 @@ $facturas = $db->query($query);
             <td><?=$f['fecha']?></td>
             <td><?=number_format($f['total'],2)?></td>
 
-            <td><a href="exportar_factura.php?id=<?=$f['id']?>" class="btn btn-sm btn-outline-secondary">Exportar PDF</a></td>
+            <td>
+                <a href="exportar_factura.php?id=<?=$f['id']?>" class="btn btn-sm btn-outline-secondary me-1">Exportar PDF</a>
+                <a href="exportar_factura_excel.php?id=<?=$f['id']?>" class="btn btn-sm btn-outline-secondary">Exportar Excel</a>
+            </td>
 
         </tr>
         <?php endwhile; ?>

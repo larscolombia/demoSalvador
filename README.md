@@ -12,5 +12,5 @@ Este proyecto contiene un sistema de facturación sencillo realizado en PHP sin 
    ```
 3. Abra en su navegador `http://localhost:8000/index.php`.
 
-Desde la página principal podrá registrar clientes, crear facturas, verlas y exportarlas en PDF.
+Desde la página principal podrá registrar clientes, crear facturas, verlas y exportarlas en PDF o Excel.
 
